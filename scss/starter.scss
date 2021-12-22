@@ -1,0 +1,536 @@
+// Override Bootstrap's Sass default variables
+//
+// Nearly all variables in Bootstrap are written with the `!default` flag.
+// This allows you to override the default values of those variables before
+// you import Bootstrap's source Sass files.
+//
+// Overriding the default variable values is the best way to customize your
+// CSS without writing _new_ styles. For example, change you can either change
+// `$body-color` or write more CSS that override's Bootstrap's CSS like so:
+// `body { color: red; }`.
+
+//
+// Bring in Bootstrap
+//
+
+// Option 1
+//
+// Import all of Bootstrap's CSS
+
+// @import "bootstrap/scss/bootstrap";
+
+// Option 2
+//
+// Import just the styles you need. Note that some stylesheets are required no matter what.
+
+@import "bootstrap/scss/functions"; // Required
+@import "bootstrap/scss/variables"; // Required
+@import "bootstrap/scss/mixins"; // Required
+
+//
+// Override Bootstrap here
+//
+
+// Toggle global options
+$enable-gradients: true;
+$enable-shadows: true;
+
+// Customize some defaults
+$body-color: #333;
+$body-bg: #f5f5f5;
+$border-radius: 0.4rem;
+$primary-color: #00318a;
+$hl-color: #ff328b;
+$cta-primary-color: #FF328B;
+$cta-secondary-color: #FFD78B;
+// $box-gradient: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,.65));
+$box-gradient: url(../images/bg-light.png);
+
+$modal-fade-transform: scale(1.05);
+
+// @import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot"; // Required
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+// @import "bootstrap/scss/code";
+@import "bootstrap/scss/grid";
+// @import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+// @import "bootstrap/scss/dropdown";
+// @import "bootstrap/scss/button-group";
+// @import "bootstrap/scss/input-group"; // Requires forms
+@import "bootstrap/scss/custom-forms";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar"; // Requires nav
+// @import "bootstrap/scss/card";
+// @import "bootstrap/scss/breadcrumb";
+// @import "bootstrap/scss/pagination";
+// @import "bootstrap/scss/badge";
+// @import "bootstrap/scss/jumbotron";
+// @import "bootstrap/scss/alert";
+// @import "bootstrap/scss/progress";
+// @import "bootstrap/scss/media";
+// @import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+// @import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal"; // Requires transitions
+// @import "bootstrap/scss/tooltip";
+// @import "bootstrap/scss/popover";
+// @import "bootstrap/scss/carousel";
+// @import "bootstrap/scss/spinners";
+@import "bootstrap/scss/utilities";
+// @import "bootstrap/scss/print";
+
+//
+// Custom styles
+//
+
+@mixin switch($res: 'sm') {
+  $index: 1rem;
+  $mainVal: 1rem;
+
+  @if $res == 'md' {
+      $index: 2rem;
+      $mainVal: 1.5rem;
+  } @else if $res == 'lg' {
+      $index: 3rem;
+      $mainVal: 2rem;
+  } @else if $res == 'xl' {
+      $index: 4rem;
+      $mainVal: 2.5rem;
+  }
+
+  .custom-control-label {
+      padding-left: #{$index};
+      padding-bottom: #{$mainVal};
+  }
+
+  .custom-control-label::before {
+      height: $mainVal;
+      width: calc(#{$index} + 0.75rem);
+      border-radius: $mainVal * 2;
+  }
+
+  .custom-control-label::after {
+      width: calc(#{$mainVal} - 4px);
+      height: calc(#{$mainVal} - 4px);
+      border-radius: calc(#{$index} - (#{$mainVal} / 2));
+  }
+
+  .custom-control-input:checked ~ .custom-control-label::after {
+      transform: translateX(calc(#{$mainVal} - 0.25rem));
+  }
+}
+
+// YOU CAN PUT ALL RESOLUTION HERE
+// sm - DEFAULT, md, lg, xl
+.custom-switch.custom-switch-sm {
+  @include switch();
+}
+
+.custom-switch.custom-switch-md {
+  @include switch('md');
+}
+
+.custom-switch.custom-switch-lg {
+  @include switch('lg');
+}
+
+.custom-switch.custom-switch-xl {
+  @include switch('xl');
+}
+
+//variabili custom sito
+
+
+@keyframes blob-float {
+	0% { transform: translatey(0px); }
+	50% { transform: translatey(-20px); }
+	100% { transform: translatey(0px); }
+}
+
+@keyframes bounce {
+    70% { transform:translateY(0%); }
+    80% { transform:translateY(-15%); }
+    90% { transform:translateY(0%); }
+    95% { transform:translateY(-7%); }
+    97% { transform:translateY(0%); }
+    99% { transform:translateY(-3%); }
+    100% { transform:translateY(0); }
+}
+
+@keyframes navbar-brand-curtain-anim {
+	0% { background-position: 100% 100%; }
+	100% { background-position: 0% 130%; }
+}
+@keyframes scale-down {
+  0% { transform:scale(110%);}
+  100% { transform: scale(100%);}
+}
+
+
+
+$box-radius: 2em;
+
+.form-custom{
+  border-radius: $box-radius/2;
+  color: rgba($primary-color, .5) !important;
+}
+
+body {
+  padding: 0;
+  font-family: "cocogooseregular";
+  &.grad {
+    //background: url(../images/noise.svg), linear-gradient(90deg, #a2adbf, #a3cccc);
+    background: url(../images/bg-site.jpg) repeat-y center;
+    background-size: 100%;
+  }
+}
+
+.modal-header {
+	border: 0;
+}
+
+.modal-dialog {
+	min-width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+  
+.modal-content {
+	height: auto;
+	min-height: 100%;
+	border-radius: 0;
+}
+
+.small-claim {
+  font-size: 18px;
+}
+.claim {
+	font-size: 25px;
+}
+.btn {
+	border-radius: $box-radius;
+	padding: 12px 40px;
+	color: #fff;
+	text-shadow: 0 1px 1px rgba(0,0,0,.5);
+	background-size: 101%;
+	background-position: center;
+    transition: 0.5s all;
+	&:hover {
+		color: #fff
+	}
+}
+
+
+.btn-custom {
+    //background-image: linear-gradient(to right, $cta-primary-color, $cta-secondary-color );
+    background: url(../images/bg-button.jpg) repeat-y center;
+    background-size: 102% 102%;
+    &:hover {
+		transform: scale(105%);
+	}
+}
+
+.navbar-brand {
+  flex: 1 0 1%;
+  animation: scale-down 2s ease;
+  .navbar-brand-curtain {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 40%, rgba(255,255,255,1) 60%);
+    background-size: 300% 100%;
+    animation: navbar-brand-curtain-anim 2s ease;
+  }
+}
+
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-nav .active .nav-link {
+  color: #3f63a6;
+  position: relative;
+}
+
+.navbar-light .navbar-nav .active .nav-link {
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    border-radius: 20px;
+    background-color: $hl-color;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.nav-item {
+  margin: 0 5px;
+  display: inherit;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.navbar-light .navbar-nav .nav-link.button {
+  background: rgba($primary-color, 0.2);
+  border-radius: $box-radius;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+.navbar-toggler {
+  border: none;
+  padding: 0;
+  flex: inherit;
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: $primary-color;
+    margin: 6px 0;
+    transition: 0.4s;
+    border-radius: 1em;
+  }
+
+
+.navbar-collapse {
+  flex: 0 1 100%;
+}
+    /* Rotate first bar */
+  &.change .bar1 {
+    transform: rotate(-45deg) translate(-8px, 8px) ;
+  }
+
+  /* Fade out the second bar */
+  &.change .bar2 {
+    transform: scale(0);
+  }
+
+  /* Rotate last bar */
+  &.change .bar3 {
+    transform: rotate(45deg) translate(-8px, -8px) ;
+  }
+}
+
+/* body */
+
+.section {
+  background-image: url(../images/section-end.png);
+  background-repeat:repeat-x;
+  background-position: center bottom;
+}
+
+.box {
+  border-radius: $box-radius;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  background: $box-gradient; 
+  background-position: center;
+  background-size: 100% 100%;
+  position: relative;
+  z-index: 10;
+  
+  &.dark {
+    //background: url(../images/griglia.png), url(../images/bg-dark.jpg) /*, linear-gradient(rgba(60,50,50,1), rgba(30,30,30,1))*/;
+    background-position: center, center;
+    background-repeat: no-repeat, repeat-x;
+    background-size: 100%, contain;
+    color: #fff;
+    background-attachment: fixed, scroll;
+  }
+  &.hollow {
+    background: none;
+    color: #fff;
+  }
+  &.how-to {
+    background: $box-gradient;
+    background-size: 120%;
+    background-position: 100%;
+    &.nft {
+      //background-image: url(../images/venus-bitmap.jpg);
+
+    }
+    &.metaverso {
+     //background-image: url(../images/metaverso2.jpg);
+
+    }
+    &.form {
+      //background-image: url(../images/form.jpg);
+      background-position: top left -100px;
+      background-size: cover;
+    }
+    [class*='col-'] {
+      background: $box-gradient; 
+      background-size: 100% 100%;
+      border-radius: $box-radius;
+      &.hollow {
+        background: none;
+        color: #fff;
+      }
+    }
+  }
+  &:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-top: 0;
+  }
+  &:last-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 0;
+  }
+  &.single {
+    border-radius: $box-radius;
+  }
+  &.footer {
+    border-radius: $box-radius;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 0;
+  }
+}
+
+
+.mask {
+  position: absolute;
+	bottom: 0;
+	right: 30px;
+  overflow: hidden;
+}
+
+.blob {
+	position: absolute;
+	top: 130px;
+  left: auto;
+  right: 20px;
+  width: auto;
+	height: 300px;
+	filter: drop-shadow(-5px 5px 7px rgba(0,0,0,.4));
+	z-index: 100;
+	animation: blob-float 6s ease-in-out infinite;
+  z-index: -1;
+  opacity: .3;
+}
+
+.socrates-vr {
+	position: absolute;
+	top: 80px;
+	right: 50px;
+	width: 350px;
+	height: auto;
+	filter: drop-shadow(0px 0px 7px rgba(0,0,0,.4));
+	z-index: 100;
+	animation: blob-float 10s ease-in-out infinite;
+  animation-delay: -1s;
+  opacity: .2;
+}
+.meta-girl {
+	position: relative;
+  bottom: -20px;
+	filter: drop-shadow(0px 0px 7px rgba(0,0,0,.4));
+	z-index: 100;
+	animation: blob-float 14s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+.sponsor {
+  filter: drop-shadow(0px 2px 2px rgba(0,0,0,.25));
+}
+
+.scroller {
+	position: absolute;
+	bottom: -60px;
+	height: 60px;
+	width: 180px;
+	left: 50%;
+	margin-left: -90px;
+	background-image: url(../images/scroller-frame.png);
+	background-size: contain;
+	background-position: center;
+	img {
+		margin-top: -40px;
+		animation: bounce 3s ease infinite;
+	}
+}
+
+
+#particles-js {
+  display: block;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.nodeCount {
+  color: cyan;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+
+
+@include media-breakpoint-up(sm) {
+  
+  .small-claim {
+    font-size: 1.5rem;
+  }
+  .claim {
+    font-size: 30px;
+  }
+  
+  
+}
+@include media-breakpoint-up(md) {
+  .mx-md-0 {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+  }
+  
+  .navbar-brand {
+    flex:auto;
+    width: 60%;
+  }
+  .navbar.toggler {
+    
+    flex: inherit;
+  }
+  .small-claim {
+    font-size: 1.5rem;
+  }
+  .claim {
+    font-size: 45px;
+  }
+  
+  .blob {
+    top: 130px;
+    right: 30px;
+    width: 330px;
+    height: auto;
+    opacity: 1;
+    z-index: 1;
+  }
+}
+@include media-breakpoint-up(lg) {
+  .blob {
+    top: 110px;
+    right: 60px;
+    width: 560px;
+    height: auto;
+    opacity: 1;
+    z-index: 0;
+  }
+  .socrates-vr {
+    opacity: 1;
+  }
+}
+@include media-breakpoint-up(xl) {
+}
