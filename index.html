@@ -16,7 +16,17 @@
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="msapplication-config" content="assets/images/favicon/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
-
+        <style>
+            /* optional css fade in animation */
+            .vplayer, iframe {
+                transition: opacity 500ms ease-in-out;
+                transition-delay: 0ms;
+            }
+            .vplayer {
+                border-radius: 2em;
+                opacity: .2;
+            }
+        </style>
         <title>Metamorfosi.io</title>
     </head>
 
@@ -73,6 +83,7 @@
                     </div>
 
                     <div class="col-md-12 box dark p-4 p-sm-5 mt-5 lozad" data-background-image="assets/images/griglia.png, assets/images/bg-dark.jpg">
+                        <div class="vplayer" data-vbg="https://www.youtube.com/watch?v=EFfJSv1omWM&t=43s" data-vbg-load-background="false"> </div>
                         <div class="col-12 col-lg-7 p-0">
                             <h1 class="claim d-block mb-3">Chi Siamo e Cosa Facciamo</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nunc mauris, aliquam ut consequat lobortis, semper in ex. Nam id pulvinar ante. Duis a leo rhoncus, tincidunt tellus et, sagittis quam. Suspendisse eget dictum lorem. Aliquam convallis, elit id mollis tristique, lectus tellus congue nunc, non tincidunt mi nisi ac nibh. Nunc volutpat non sem ultricies euismod.</p>
@@ -82,7 +93,7 @@
                         <img data-src="assets/images/busto-socrates-vr.png" class="socrates-vr lozad" alt="vr socrates">
                     </div>
 
-                    <div class="col-md-12 box hollow p-4 p-sm-5">
+                    <div class="col-md-12 box hollow p-4 p-sm-5" >
                         <div class="col-md-12 p-0">
                             <h1 class="claim d-block mb-3">Come Funziona</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nunc mauris, aliquam ut consequat lobortis, semper in ex. Nam id pulvinar ante. Duis a leo rhoncus, tincidunt tellus et, sagittis quam. Suspendisse eget dictum lorem. Aliquam convallis, elit id mollis tristique, lectus tellus congue nunc, non tincidunt mi nisi ac nibh. Nunc volutpat non sem ultricies euismod.</p>
@@ -125,6 +136,7 @@
             </div>
         </div>
 
+    
         <div class="">
             <div class="container">
                 <div class="row">
@@ -132,7 +144,7 @@
 
                     <!-- FORM -->
                     
-                    <div class="col-md-12 box how-to form single p-0 mt-4 lozad" data-background-image="assets/images/form.jpg">
+                    <div class="col-md-12 box how-to form single p-0 mt-4 lozad" data-background-image="assets/images/form.jpg" >
                         <div class="row m-0">
                             <div class="col-md-7 box hollow p-4 p-sm-5">
                                 <h4 class="small-claim">Richiedi </h4>
@@ -210,6 +222,7 @@
         </div>
         <div id="particles-js"></div>
         <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+        <script src="node_modules\youtube-background\jquery.youtube-background.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js" crossorigin="anonymous"></script>
         <script type="module" src="assets/js/starter.js"></script>
         <script type="text/javascript" src="assets/js/particles.min.js"></script>

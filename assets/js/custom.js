@@ -15,6 +15,9 @@
             $(el).css("background-position", "50% " + (dy - ot*1.4) * parallax + "px");
         });
     });
+
+    
+    jQuery('[data-vbg]').youtube_background();
 })(jQuery);
 
 
@@ -33,3 +36,4 @@ const observer = lozad('.lozad', {
     enableAutoReload: true // it will reload the new image when validating attributes changes
 });
 observer.observe();
+
