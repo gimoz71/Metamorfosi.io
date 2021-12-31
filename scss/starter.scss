@@ -145,6 +145,16 @@ $modal-fade-transform: scale(1.05);
 //variabili custom sito
 
 
+/* optional css fade in animation */
+iframe {
+  transition: opacity 500ms ease-in-out;
+  transition-delay: 0ms;
+}
+.vplayer {
+  border-radius: 2em;
+  opacity: .2;
+}
+
 @keyframes blob-float {
 	0% { transform: translatey(0px); }
 	50% { transform: translatey(-20px); }

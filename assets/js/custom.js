@@ -18,6 +18,10 @@
 
     
     jQuery('[data-vbg]').youtube_background();
+
+    var font_settings = "<style type='text/css'> @font-face {font-family: 'cocogooseregular'; src: url('../assets/fonts/cocogoose-webfont.woff2') format('woff2'),url('../assets/fonts/cocogoose-webfont.woff') format('woff');font-weight: normal;font-style: normal;</style>";
+    $("head").append(font_settings);
+
 })(jQuery);
 
 
