@@ -17,15 +17,15 @@
 //
 // Import all of Bootstrap's CSS
 
-// @import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
 
 // Option 2
 //
 // Import just the styles you need. Note that some stylesheets are required no matter what.
 
-@import "bootstrap/scss/functions"; // Required
-@import "bootstrap/scss/variables"; // Required
-@import "bootstrap/scss/mixins"; // Required
+// @import "bootstrap/scss/functions"; // Required
+// @import "bootstrap/scss/variables"; // Required
+// @import "bootstrap/scss/mixins"; // Required
 
 //
 // Override Bootstrap here
@@ -358,7 +358,7 @@ body {
   }
   &.how-to {
     background: $box-gradient;
-    background-size: 120%;
+    background-size: 170%;
     background-position: 100%;
     &.nft {
       //background-image: url(../images/venus-bitmap.jpg);
@@ -543,4 +543,25 @@ body {
   }
 }
 @include media-breakpoint-up(xl) {
+}
+
+
+
+mark{
+  position:relative;
+  display: inline;
+  background: none;
+  //color: inherit;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  //background-image: linear-gradient( rgba(255, 107, 181, 0), rgba(255, 107, 181,1) 25%, rgba(255, 107, 181, 0), rgba(255, 107, 181,1) 85%, rgba(255, 107, 181, 0));
+  background-color:rgba(255, 253, 109, 0.75);
+  z-index: 1;
+}
+
+#feedback {
+  display: none;
 }
