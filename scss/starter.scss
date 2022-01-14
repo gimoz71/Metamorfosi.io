@@ -41,8 +41,8 @@ $body-bg: #f5f5f5;
 $border-radius: 0.4rem;
 $primary-color: #00318a;
 $hl-color: #ff328b;
-$cta-primary-color: #FF328B;
-$cta-secondary-color: #FFD78B;
+$cta-primary-color: #ff328b;
+$cta-secondary-color: #ffd78b;
 // $box-gradient: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,.65));
 $box-gradient: url(../images/bg-light.png);
 
@@ -87,40 +87,40 @@ $modal-fade-transform: scale(1.05);
 // Custom styles
 //
 
-@mixin switch($res: 'sm') {
+@mixin switch($res: "sm") {
   $index: 1rem;
   $mainVal: 1rem;
 
-  @if $res == 'md' {
-      $index: 2rem;
-      $mainVal: 1.5rem;
-  } @else if $res == 'lg' {
-      $index: 3rem;
-      $mainVal: 2rem;
-  } @else if $res == 'xl' {
-      $index: 4rem;
-      $mainVal: 2.5rem;
+  @if $res == "md" {
+    $index: 2rem;
+    $mainVal: 1.5rem;
+  } @else if $res == "lg" {
+    $index: 3rem;
+    $mainVal: 2rem;
+  } @else if $res == "xl" {
+    $index: 4rem;
+    $mainVal: 2.5rem;
   }
 
   .custom-control-label {
-      padding-left: #{$index};
-      padding-bottom: #{$mainVal};
+    padding-left: #{$index};
+    padding-bottom: #{$mainVal};
   }
 
   .custom-control-label::before {
-      height: $mainVal;
-      width: calc(#{$index} + 0.75rem);
-      border-radius: $mainVal * 2;
+    height: $mainVal;
+    width: calc(#{$index} + 0.75rem);
+    border-radius: $mainVal * 2;
   }
 
   .custom-control-label::after {
-      width: calc(#{$mainVal} - 4px);
-      height: calc(#{$mainVal} - 4px);
-      border-radius: calc(#{$index} - (#{$mainVal} / 2));
+    width: calc(#{$mainVal} - 4px);
+    height: calc(#{$mainVal} - 4px);
+    border-radius: calc(#{$index} - (#{$mainVal} / 2));
   }
 
   .custom-control-input:checked ~ .custom-control-label::after {
-      transform: translateX(calc(#{$mainVal} - 0.25rem));
+    transform: translateX(calc(#{$mainVal} - 0.25rem));
   }
 }
 
@@ -131,19 +131,18 @@ $modal-fade-transform: scale(1.05);
 }
 
 .custom-switch.custom-switch-md {
-  @include switch('md');
+  @include switch("md");
 }
 
 .custom-switch.custom-switch-lg {
-  @include switch('lg');
+  @include switch("lg");
 }
 
 .custom-switch.custom-switch-xl {
-  @include switch('xl');
+  @include switch("xl");
 }
 
 //variabili custom sito
-
 
 /* optional css fade in animation */
 iframe {
@@ -152,97 +151,137 @@ iframe {
 }
 .vplayer {
   border-radius: 2em;
-  opacity: .7;
+  opacity: 0.7;
 }
 
 @keyframes blob-float {
-	0% { transform: translatey(0px); }
-	50% { transform: translatey(-20px); }
-	100% { transform: translatey(0px); }
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
 }
 
 @keyframes bounce {
-    70% { transform:translateY(0%); }
-    80% { transform:translateY(-15%); }
-    90% { transform:translateY(0%); }
-    95% { transform:translateY(-7%); }
-    97% { transform:translateY(0%); }
-    99% { transform:translateY(-3%); }
-    100% { transform:translateY(0); }
+  70% {
+    transform: translateY(0%);
+  }
+  80% {
+    transform: translateY(-15%);
+  }
+  90% {
+    transform: translateY(0%);
+  }
+  95% {
+    transform: translateY(-7%);
+  }
+  97% {
+    transform: translateY(0%);
+  }
+  99% {
+    transform: translateY(-3%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes navbar-brand-curtain-anim {
-	0% { background-position: 100% 100%; }
-	100% { background-position: 0% 130%; }
+  0% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 130%;
+  }
 }
 @keyframes scale-down {
-  0% { transform:scale(110%);}
-  100% { transform: scale(100%);}
+  0% {
+    transform: scale(110%);
+  }
+  100% {
+    transform: scale(100%);
+  }
 }
-
-
 
 $box-radius: 2em;
 
-.form-custom{
+.form-custom {
   border-radius: $box-radius/2;
-  color: rgba($primary-color, .5) !important;
+  color: rgba($primary-color, 0.5) !important;
 }
 
 body {
   padding: 0;
-  font-family: "cocogooseregular";
+  //font-family: "cocogooseregular";
+  font-family: "Spartan", sans-serif;
+  //font-size: 20px;
   &.grad {
     //background: url(../images/noise.svg), linear-gradient(90deg, #a2adbf, #a3cccc);
     background: url(../images/bg-site.jpg) repeat-y center;
     background-size: 100%;
   }
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "cocogooseregular";
+}
+p {
+  font-size: 18px;
+  line-height: 1.5em;
+  font-weight: 600;
+}
 .modal-header {
-	border: 0;
+  border: 0;
 }
 
 .modal-dialog {
-	min-width: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 0;
+  min-width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
-  
+
 .modal-content {
-	height: auto;
-	min-height: 100%;
-	border-radius: 0;
+  height: auto;
+  min-height: 100%;
+  border-radius: 0;
 }
 
 .small-claim {
   font-size: 18px;
 }
 .claim {
-	font-size: 25px;
+  font-size: 25px;
 }
 .btn {
-	border-radius: $box-radius;
-	padding: 12px 40px;
-	color: #fff;
-	text-shadow: 0 1px 1px rgba(0,0,0,.5);
-	background-size: 101%;
-	background-position: center;
-    transition: 0.5s all;
-	&:hover {
-		color: #fff
-	}
+  border-radius: $box-radius;
+  padding: 12px 40px;
+  color: #fff;
+  font-family: "cocogooseregular";
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  background-size: 101%;
+  background-position: center;
+  transition: 0.5s all;
+  &:hover {
+    color: #fff;
+  }
 }
 
-
 .btn-custom {
-    //background-image: linear-gradient(to right, $cta-primary-color, $cta-secondary-color );
-    background: url(../images/bg-button.jpg) repeat-y center;
-    background-size: 102% 102%;
-    &:hover {
-		transform: scale(105%);
-	}
+  //background-image: linear-gradient(to right, $cta-primary-color, $cta-secondary-color );
+  background: url(../images/bg-button.jpg) repeat-y center;
+  background-size: 102% 102%;
+  &:hover {
+    transform: scale(105%);
+  }
 }
 
 .navbar-brand {
@@ -253,12 +292,15 @@ body {
     top: 0;
     height: 100%;
     width: 100%;
-    background: linear-gradient(90deg, rgba(255,255,255,0) 40%, rgba(255,255,255,1) 60%);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 1) 60%
+    );
     background-size: 300% 100%;
     animation: navbar-brand-curtain-anim 2s ease;
   }
 }
-
 
 .navbar-light .navbar-nav .nav-link,
 .navbar-light .navbar-nav .active .nav-link {
@@ -280,6 +322,7 @@ body {
 }
 
 .nav-item {
+  font-family: "cocogooseregular";
   margin: 0 5px;
   display: inherit;
   &:last-child {
@@ -297,7 +340,9 @@ body {
   border: none;
   padding: 0;
   flex: inherit;
-  .bar1, .bar2, .bar3 {
+  .bar1,
+  .bar2,
+  .bar3 {
     width: 35px;
     height: 5px;
     background-color: $primary-color;
@@ -306,13 +351,12 @@ body {
     border-radius: 1em;
   }
 
-
-.navbar-collapse {
-  flex: 0 1 100%;
-}
-    /* Rotate first bar */
+  .navbar-collapse {
+    flex: 0 1 100%;
+  }
+  /* Rotate first bar */
   &.change .bar1 {
-    transform: rotate(-45deg) translate(-8px, 8px) ;
+    transform: rotate(-45deg) translate(-8px, 8px);
   }
 
   /* Fade out the second bar */
@@ -322,23 +366,23 @@ body {
 
   /* Rotate last bar */
   &.change .bar3 {
-    transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px);
   }
 }
 
 .navbar-fixed {
-    border-radius: 0 0 $box-radius $box-radius;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background: white; 
-    background-position: center;
-    background-size: 100% 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 2px rgba(0,0,0,.1);
+  border-radius: 0 0 $box-radius $box-radius;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: white;
+  background-position: center;
+  background-size: 100% 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* body */
@@ -349,7 +393,7 @@ body {
 
 .section-last {
   background-image: url(../images/section-end.png);
-  background-repeat:repeat-x;
+  background-repeat: repeat-x;
   background-position: center bottom;
 }
 
@@ -366,25 +410,27 @@ body {
 
 .section-special-start {
   position: absolute;
-  top: -850px;
+  top: -990px;
   left: 0;
   width: 100%;
   height: 1100px;
   background-image: url(../images/section-special-start.png);
-  background-repeat:repeat-x;
+  background-repeat: repeat-x;
   background-position: center bottom;
+  background-size: 70px auto;
   z-index: 1;
 }
 
 .section-special-end {
   position: absolute;
-  bottom: -820px;
+  bottom: -990px;
   left: 0;
   width: 100%;
   height: 1100px;
   background-image: url(../images/section-special-end.png);
-  background-repeat:repeat-x;
-  background-position: center bottom;
+  background-repeat: repeat-x;
+  background-position: center top;
+  background-size: 70px auto;
   z-index: 1;
 }
 
@@ -393,12 +439,12 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
   position: relative;
-  background: $box-gradient; 
+  background: $box-gradient;
   background-position: center;
   background-size: 100% 100%;
   position: relative;
   z-index: 10;
-  
+
   &.dark {
     //background: url(../images/griglia.png), url(../images/bg-dark.jpg) /*, linear-gradient(rgba(60,50,50,1), rgba(30,30,30,1))*/;
     background-position: center, center;
@@ -417,19 +463,20 @@ body {
     background-position: 100%;
     &.nft {
       //background-image: url(../images/venus-bitmap.jpg);
-
     }
     &.metaverso {
-     //background-image: url(../images/metaverso2.jpg);
-
+      //background-image: url(../images/metaverso2.jpg);
     }
-    &.form {
+    &.form,
+    input,
+    textarea {
       //background-image: url(../images/form.jpg);
       background-position: top left -100px;
       background-size: cover;
+      font-weight: 700;
     }
-    [class*='col-'] {
-      background: $box-gradient; 
+    [class*="col-"] {
+      background: $box-gradient;
       background-size: 100% 100%;
       border-radius: $box-radius;
       &.hollow {
@@ -456,72 +503,76 @@ body {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     margin-bottom: 0;
+    .logo-footer {
+      max-width: 290px;
+    }
+    p {
+      font-size: 16px;
+    }
   }
 }
 
-
 .mask {
   position: absolute;
-	bottom: 0;
-	right: 30px;
+  bottom: 0;
+  right: 30px;
   overflow: hidden;
 }
 
 .blob {
-	position: absolute;
-	top: 130px;
+  position: absolute;
+  top: 130px;
   left: auto;
   right: 20px;
   width: auto;
-	height: 300px;
-	filter: drop-shadow(-5px 5px 7px rgba(0,0,0,.4));
-	z-index: 100;
-	animation: blob-float 6s ease-in-out infinite;
+  height: 300px;
+  filter: drop-shadow(-5px 5px 7px rgba(0, 0, 0, 0.4));
+  z-index: 100;
+  animation: blob-float 6s ease-in-out infinite;
   z-index: -1;
-  opacity: .3;
+  opacity: 0.3;
 }
 
 .socrates-vr {
-	position: absolute;
-	top: 80px;
-	right: 50px;
-	width: 350px;
-	height: auto;
-	filter: drop-shadow(0px 0px 7px rgba(0,0,0,.4));
-	z-index: 100;
-	animation: blob-float 10s ease-in-out infinite;
+  position: absolute;
+  top: 80px;
+  right: 50px;
+  width: 350px;
+  height: auto;
+  filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.4));
+  z-index: 100;
+  animation: blob-float 10s ease-in-out infinite;
   animation-delay: -1s;
-  opacity: .2;
+  opacity: 0.2;
 }
 .meta-girl {
-	position: relative;
+  position: relative;
   bottom: -20px;
-	filter: drop-shadow(0px 0px 7px rgba(0,0,0,.4));
-	z-index: 100;
-	animation: blob-float 14s ease-in-out infinite;
+  filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.4));
+  z-index: 100;
+  animation: blob-float 14s ease-in-out infinite;
   animation-delay: -2s;
 }
 
 .sponsor {
-  filter: drop-shadow(0px 2px 2px rgba(0,0,0,.25));
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
 }
 
 .scroller {
-	position: absolute;
-	bottom: -60px;
-	height: 60px;
-	width: 180px;
-	left: 50%;
-	margin-left: -90px;
-	background-image: url(../images/scroller-frame.png);
-	background-size: contain;
-	background-position: center;
-	img {
-		margin-top: -40px;
-		animation: bounce 3s ease infinite;
-	}
+  position: absolute;
+  bottom: -60px;
+  height: 60px;
+  width: 180px;
+  left: 50%;
+  margin-left: -90px;
+  background-image: url(../images/scroller-frame.png);
+  background-size: contain;
+  background-position: center;
+  img {
+    margin-top: -40px;
+    animation: bounce 3s ease infinite;
+  }
 }
-
 
 #particles-js {
   display: block;
@@ -541,31 +592,25 @@ body {
   background-color: rgba(0, 0, 0, 0.75);
 }
 
-
-
 @include media-breakpoint-up(sm) {
-  
   .small-claim {
     font-size: 1.5rem;
   }
   .claim {
     font-size: 30px;
   }
-  
-  
 }
 @include media-breakpoint-up(md) {
   .mx-md-0 {
     margin-right: 0px !important;
     margin-left: 0px !important;
   }
-  
+
   .navbar-brand {
-    flex:auto;
+    flex: auto;
     width: 60%;
   }
   .navbar.toggler {
-    
     flex: inherit;
   }
   .small-claim {
@@ -574,7 +619,7 @@ body {
   .claim {
     font-size: 45px;
   }
-  
+
   .blob {
     top: 130px;
     right: 30px;
@@ -600,24 +645,76 @@ body {
 @include media-breakpoint-up(xl) {
 }
 
-
-
-mark{
-  position:relative;
+mark {
+  position: relative;
   display: inline;
   background: none;
-  //color: inherit;
-  margin-left: 5px;
+  color: inherit;
+  /*margin-left: 5px;
   margin-right: 5px;
   padding-left: 10px;
   padding-right: 10px;
-  border-radius: 20px;
+  border-radius: 20px;*/
   //background-image: linear-gradient( rgba(255, 107, 181, 0), rgba(255, 107, 181,1) 25%, rgba(255, 107, 181, 0), rgba(255, 107, 181,1) 85%, rgba(255, 107, 181, 0));
-  background-color:rgba(255, 253, 109, 0.75);
+  //background-color:rgba(255, 253, 109, 0.75);
+  border: none;
+  border-bottom: dotted 2px rgba(255, 253, 109, 0.75);
   z-index: 1;
+  padding: 0;
 }
-
 
 #feedback {
   display: none;
+}
+
+#cookieConsent {
+  background-color: rgba(255,255,255,.85);
+  text-align: center;
+  display: none;
+  position: fixed;
+  z-index: 65000;
+  bottom: 0px;
+  width: 100%;
+  font-size: 14px;
+  padding: 20px;
+}
+#cookieConsent button.cookieAccept {
+  background: #090;
+  color: white;
+  font-size: 12px;
+  margin: 0 10px;
+  padding: 5px 20px 3px
+}
+
+
+.social {
+  text-align: center;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  border: none;
+  font-size: 0;
+  background-size: contain;
+  background-position: center;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  padding: 0;
+  image-rendering: high-quality;
+  transition: all 200ms ease-out;
+  &.facebook {
+    background-image: url(../images/icon-facebook.svg);
+  }
+  &.twitter {
+    background-image: url(../images/icon-twitter.svg);
+  }
+  &.pinterest {
+    background-image: url(../images/icon-pinterest.svg);
+  }
+
+  &:hover {
+    transform: scale(1.25);
+  }
+  &:active {
+    transform: scale(0.9);
+  }
 }

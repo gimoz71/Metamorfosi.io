@@ -27,7 +27,7 @@ $(function() {
             var ot = offset_tops[i];
             $(el).css(
             "background-position",
-            "50% " + (dy - ot * 1.4) * parallax + "px"
+            "50% " + (dy - ot * 1.15) * parallax + "px"
             );
         });
     });
@@ -176,7 +176,7 @@ $(function() {
 
 
 
-    /* MENU TOGGLER ANIMATO  */
+    /* MENU TOGGLER ANIMATO */
     /*----------------------------------------------------------------------*/
 
     $('.menu-anim').on('click touch', function () {
@@ -186,12 +186,10 @@ $(function() {
 
 
 
-    
+    /* VIDEO BACKGROUND */
+    /*----------------------------------------------------------------------*/
 
     if (!isMobile) {
-
-         
-       
          // youtube background
         jQuery("[data-vbg]").youtube_background();
     }
@@ -220,6 +218,8 @@ $(function() {
         return false;
     });
 
+
+
     /* LAZY LOAD IMMAGINI */
     /*----------------------------------------------------------------------*/
     
@@ -229,6 +229,13 @@ $(function() {
         enableAutoReload: true // it will reload the new image when validating attributes changes
     });
     observer.observe();
+    
+
+
+    /* COOKIE CONSENT */
+    /*----------------------------------------------------------------------*/
+
+    $('#cookieConsent').cookieConsent();
     
 });
 
